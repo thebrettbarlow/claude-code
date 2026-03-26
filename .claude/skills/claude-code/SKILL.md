@@ -95,17 +95,19 @@ Include:
 
 ### Skill Structure
 
+A minimal skill is just `SKILL.md`. As it grows, add subdirectories:
+
 ```
 .claude/skills/my-skill/
-├── SKILL.md           # Main skill file (auto-loaded)
-├── reference/         # Detailed docs (loaded on demand)
+├── SKILL.md           # Main skill file (auto-loaded, required)
+├── reference/         # Detailed docs (loaded on demand, optional)
 │   ├── patterns.md
 │   └── examples.md
 └── scripts/           # Executable logic (optional)
     └── helper.ts
 ```
 
-**Progressive disclosure**: Keep SKILL.md concise. Put detailed reference material in `reference/` and link to it. Claude loads reference files only when needed, saving tokens.
+**Progressive disclosure**: Keep SKILL.md concise. As a skill matures, move detailed reference material into `reference/` and link to it. Claude loads reference files only when needed, saving tokens.
 
 ---
 
