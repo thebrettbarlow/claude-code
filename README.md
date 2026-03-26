@@ -15,31 +15,35 @@ Think of it as going from a chatbot to a capable assistant that lives in your pr
 
 ## Prerequisites
 
-You'll need two things before getting started:
-
-1. **Node.js 18+** — [Download here](https://nodejs.org/) (choose the LTS version)
-2. **A Claude plan** — [Pro ($20/mo)](https://claude.ai/settings/billing) or [Max ($100-200/mo)](https://claude.ai/settings/billing)
-
-To check if Node.js is installed, open your terminal and type:
-```bash
-node --version
-```
-
-If you see a version number (like `v22.x.x`), you're good. If not, install Node.js first.
+You just need a Claude plan — [Pro ($20/mo)](https://claude.ai/settings/billing) or [Max ($100-200/mo)](https://claude.ai/settings/billing).
 
 ## Installation
 
 ### Step 1: Install Claude Code
 
-Open your terminal and run:
+Open your terminal and run the native installer (no dependencies required):
+
+**macOS / Linux:**
 ```bash
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+The native installer auto-updates in the background. Verify it worked:
+```bash
+claude --version
 ```
 
 ### Step 2: Clone this starter kit
 
+> You do **not** need a GitHub account to clone a public repo.
+
 ```bash
-git clone https://github.com/brettbarlow/claude-code.git
+git clone https://github.com/thebrettbarlow/claude-code.git
 cd claude-code
 ```
 
@@ -164,7 +168,7 @@ Claude will interview you to understand who you want to add and create the advis
 
 | Problem | Fix |
 |---------|-----|
-| `command not found: claude` | Run `npm install -g @anthropic-ai/claude-code` again |
+| `command not found: claude` | Re-run the installer: `curl -fsSL https://claude.ai/install.sh \| bash` |
 | Authentication issues | Run `claude` and follow the login prompts |
 | Claude doesn't use skills | Make sure you're running Claude from inside this folder |
 | Permission denied errors | Check `.claude/settings.json` — you may need to allow the command |
